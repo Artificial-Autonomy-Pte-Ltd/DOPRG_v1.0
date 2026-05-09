@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { UserButton } from '@clerk/nextjs';
 import useSWR from 'swr';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
@@ -96,7 +97,7 @@ export default function Home() {
                 Price + Risk-Greeks
               </p>
             </button>
-            <div className="flex gap-2">
+            <div className="flex flex-wrap items-center gap-2">
               <Input
                 type="text"
                 placeholder="Search symbol..."
@@ -112,6 +113,14 @@ export default function Home() {
               >
                 <Search className="h-4 w-4" />
               </Button>
+              <UserButton
+                appearance={{
+                  elements: {
+                    avatarBox:
+                      'h-9 w-9 ring-1 ring-border rounded-md',
+                  },
+                }}
+              />
             </div>
           </div>
         </div>
