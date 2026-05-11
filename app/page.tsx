@@ -10,6 +10,7 @@ import { Alert, AlertDescription } from '@/components/ui/alert';
 import { StockChart } from '@/components/stock-chart';
 import { OptionPricer } from '@/components/option-pricer';
 import { Search, TrendingUp, TrendingDown, Activity } from 'lucide-react';
+import { UserMenu } from '@/components/user-menu';
 
 interface StockQuote {
   symbol: string;
@@ -96,14 +97,14 @@ export default function Home() {
                 Price + Risk-Greeks
               </p>
             </button>
-            <div className="flex gap-2">
+            <div className="flex items-center gap-2 sm:gap-3">
               <Input
                 type="text"
                 placeholder="Search symbol..."
                 value={ticker}
                 onChange={(e) => setTicker(e.target.value.toUpperCase())}
                 onKeyDown={handleKeyDown}
-                className="w-[180px] sm:w-[220px] bg-secondary border-border text-foreground placeholder:text-muted-foreground font-mono"
+                className="w-[140px] sm:w-[180px] bg-secondary border-border text-foreground placeholder:text-muted-foreground font-mono"
               />
               <Button 
                 onClick={handleSearch} 
@@ -112,6 +113,8 @@ export default function Home() {
               >
                 <Search className="h-4 w-4" />
               </Button>
+              <div className="hidden sm:block h-6 w-px bg-border" />
+              <UserMenu />
             </div>
           </div>
         </div>
