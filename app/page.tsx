@@ -10,7 +10,6 @@ import { Alert, AlertDescription } from '@/components/ui/alert';
 import { StockChart } from '@/components/stock-chart';
 import { OptionPricer } from '@/components/option-pricer';
 import { Search, TrendingUp, TrendingDown, Activity } from 'lucide-react';
-import { UserMenu } from '@/components/user-menu';
 
 interface StockQuote {
   symbol: string;
@@ -106,15 +105,13 @@ export default function Home() {
                 onKeyDown={handleKeyDown}
                 className="w-[140px] sm:w-[180px] bg-secondary border-border text-foreground placeholder:text-muted-foreground font-mono"
               />
-              <Button 
-                onClick={handleSearch} 
+              <Button
+                onClick={handleSearch}
                 disabled={!ticker.trim()}
                 className="bg-primary text-primary-foreground hover:bg-primary/90"
               >
                 <Search className="h-4 w-4" />
               </Button>
-              <div className="hidden sm:block h-6 w-px bg-border" />
-              <UserMenu />
             </div>
           </div>
         </div>
